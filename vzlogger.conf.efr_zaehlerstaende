@@ -1,7 +1,7 @@
 {
   "retry": 0,
   "daemon": true,
-  "verbosity": 5,
+  "verbosity": 1,
   "log": "/var/log/vzlogger.log",
   "local": {
     "enabled": false,
@@ -14,36 +14,36 @@
     {
       "enabled": true,
       "allowskip": false,
-      "interval": 900,
-      "aggtime": -1,
+      //"interval": 900,	
+      //"aggtime": -1,
+      "aggtime": 900,
       "aggfixedinterval": false,
       "channels": [
         {
           "uuid": "80be1040-508e-11e8-9d74-6dc944d2b355",
-          "identifier": "255-255:1.8.2*0",
+          "identifier": "1-0:1.8.0*255",
           "api": "volkszaehler",
           "middleware": "http://127.0.0.1/middleware.php",
-          "aggmode": "none",
-          "duplicates": 0
+          "aggmode": "max",
+          "duplicates": 0,
         },
         {
           "uuid": "36215600-508f-11e8-8ee5-9d4ef6fd6b81",
-          "identifier": "255-255:2.8.0*0",
+          "identifier": "1-0:2.8.0*255",
           "api": "volkszaehler",
           "middleware": "http://127.0.0.1/middleware.php",
-          "aggmode": "none",
+          "aggmode": "max",
           "duplicates": 0
         }
       ],
-      "protocol": "d0",
+      "protocol": "sml",
       "device": "/dev/ttyUSB0",
-      "pullseq": "2F3F210D0A",
-      "ackseq": "063030300D0A",
-      "baudrate": 300,
-      "parity": "7e1",
+      "baudrate": 9600,
+      "parity": "8n1",
       "baudrate_change_delay": 0
     }
   ]
 }
+
 
 

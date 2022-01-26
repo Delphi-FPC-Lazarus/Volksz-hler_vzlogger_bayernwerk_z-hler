@@ -1,0 +1,41 @@
+{
+  "retry": 0,
+  "daemon": true,
+  "verbosity": 1,
+  "log": "/var/log/vzlogger.log",
+  "local": {
+    "enabled": false,
+    "port": 8080,
+    "index": true,
+    "timeout": 0,
+    "buffer": 0
+  },
+  "meters": [
+    {
+      "enabled": true,
+      "allowskip": false,
+      //"interval": 900,	
+      //"aggtime": -1,
+      "aggtime": 900,
+      "aggfixedinterval": true,
+      "channels": [
+        {
+          "uuid": "e88996c0-7eb7-11ec-b81a-3be93fc4029e",
+          "identifier": "1-0:16.7.0*255",
+          "api": "volkszaehler",
+          "middleware": "http://127.0.0.1/middleware.php",
+          "aggmode": "avg",
+          "duplicates": 0,
+        }
+      ],
+      "protocol": "sml",
+      "device": "/dev/ttyUSB0",
+      "baudrate": 9600,
+      "parity": "8n1",
+      "baudrate_change_delay": 0
+    }
+  ]
+}
+
+
+

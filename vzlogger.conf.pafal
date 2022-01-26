@@ -1,0 +1,50 @@
+{
+  "retry": 0,
+  "daemon": true,
+  "verbosity": 5,
+  "log": "/var/log/vzlogger.log",
+  "local": {
+    "enabled": false,
+    "port": 8080,
+    "index": true,
+    "timeout": 0,
+    "buffer": 0
+  },
+  "meters": [
+    {
+      "enabled": true,
+      "allowskip": false,
+      "interval": 900,
+      "aggtime": -1,
+      "aggfixedinterval": false,
+      "channels": [
+        {
+          "uuid": "80be1040-508e-11e8-9d74-6dc944d2b355",
+          "identifier": "255-255:1.8.2*0",
+          "api": "volkszaehler",
+          "middleware": "http://127.0.0.1/middleware.php",
+          "aggmode": "none",
+          "duplicates": 0
+        },
+        {
+          "uuid": "36215600-508f-11e8-8ee5-9d4ef6fd6b81",
+          "identifier": "255-255:2.8.0*0",
+          "api": "volkszaehler",
+          "middleware": "http://127.0.0.1/middleware.php",
+          "aggmode": "none",
+          "duplicates": 0
+        }
+      ],
+      "protocol": "d0",
+      "device": "/dev/ttyUSB0",
+      "pullseq": "2F3F210D0A",
+      "ackseq": "063030300D0A",
+      "baudrate": 300,
+      "parity": "7e1",
+      "baudrate_change_delay": 0
+    }
+  ]
+}
+
+
+
